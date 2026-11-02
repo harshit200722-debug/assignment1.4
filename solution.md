@@ -1,15 +1,54 @@
-Part 1: Explanatory Paragraph
-When you type a URL into your web browser (the client), it triggers a request-response cycle by sending an HTTP (Hypertext Transfer Protocol) or securely encrypted HTTPS request across the internet to the server where the website lives. For a static website, the server simply responds by sending pre-written HTML, CSS, and JavaScript files directly back to the client. However, if it is a dynamic website, the server first communicates with a database to retrieve specific, up-to-date data (like user profiles or live feeds) and builds the webpage on the fly before sending the final code back. Once the browser receives this response, it translates the code into the visual website that opens on your screen.
+Part 1: Terminal Commands to Run
+First, ensure you have downloaded and installed Git from git-scm.com. Then, open your terminal (or Git Bash on Windows) in your project folder and run these commands one by one.
 
-Part 2: How to get your Screenshot
-To fulfill the second part of your assignment, you'll need to take a screenshot of the Network tab on your own computer. Here is exactly how to do it:
+(Make sure to replace "Your Name" and "your.email@example.com" with your actual details).
 
-Open Google Chrome and go to any website (e.g., wikipedia.org).
+Bash
+# 1. Verify Git installation
+git --version
 
-Right-click anywhere on the page and select Inspect (or press Ctrl + Shift + I on Windows / Cmd + Option + I on Mac).
+# 2. Configure your Git identity (only needs to be done once per computer)
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
 
-In the panel that opens, click on the Network tab at the top. (If you don't see it, click the >> arrows to reveal hidden tabs).
+# 3. Initialize the Git repository in your current folder
+git init
 
-With the Network tab open, refresh the page (F5 or Ctrl + R). You will see a waterfall of files (requests) loading in the panel.
+# 4. Create an HTML file
+touch index.html
 
-Take a screenshot of this entire window showing the list of network requests and save it to submit with your paragraph.
+# 5. Check status, add, and make Commit #1
+git status
+git add index.html
+git commit -m "Initial commit: create blank index.html"
+
+# 6. Make a change and create Commit #2
+echo "<h1>Hello Git!</h1>" > index.html
+git add index.html
+git commit -m "Add main heading to index.html"
+
+# 7. Make another change and create Commit #3
+echo "<p>Learning version control today.</p>" >> index.html
+git add index.html
+git commit -m "Add description paragraph to index.html"
+
+# 8. View your commit history (This is for your screenshot)
+git log --oneline
+Part 2: How to get your Screenshots
+📸 Screenshot 1: The Repository Folder
+To prove this is a Git repository, you need to show the hidden .git folder.
+
+Open your project folder in your computer's normal file explorer (File Explorer on Windows or Finder on Mac).
+
+On Windows: Click the View tab at the top and check the box that says Hidden items.
+On Mac: Press Cmd + Shift + . (period) to reveal hidden files.
+
+You should now see a faded folder named .git sitting next to your index.html file. Take a screenshot of this folder window.
+
+📸 Screenshot 2: The History of Three Commits
+
+Look back at your terminal where you ran the commands.
+
+The final command you ran (git log --oneline) will output a neat list of the three commits you just made, complete with their generated ID hashes and your messages.
+
+Take a screenshot of the terminal window clearly showing this git log output.
